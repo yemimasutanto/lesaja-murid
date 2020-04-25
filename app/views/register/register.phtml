@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Daftar</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<?php echo $this->tag->form("dashboard"); ?> 
+    <div class="box-register" align = "center"> 
+        <div class="content-register" align="center">
+            <p>
+                <?php echo Phalcon\Tag::linkTo('dashboard','<img src="img/lesaja.png" width=250>');?>
+            </p>
+            <p>
+                <input class="form-control mr-sm-2" type="text" placeholder="Nama">
+            </p>
+            <p><br>
+                <input class="form-control mr-sm-2" type="email" placeholder="Email">
+            </p>
+            <p><br>
+                <input class="form-control mr-sm-2" type="password" placeholder="Password Baru">
+            </p>
+            <p><br>
+                <input class="form-control mr-sm-2" type="password" placeholder="Konfirmasi Password Baru">
+            </p><br>   
+                <button class="btn btn-login-register btn-primary:hover" type="button">DAFTAR</button>
+            <br>
+            <br>
+            <div class="bottom-login" align="center">
+                <label class="register" for="register-info">Sudah punya akun?</label>
+                <button class="btn btn-outline-small" type="button">Masuk</button>
+            </div>
+       </div>     
+    </div> 
+</form>
+</body> 
+</body>
+</html>
