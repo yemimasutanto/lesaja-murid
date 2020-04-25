@@ -8,24 +8,20 @@ $router = $di->getRouter();
 
 $router->handle($_SERVER['REQUEST_URI']);
 
-$router = new Phalcon\Mvc\Router();
+// $router->add('/login', [
+//         'controller' => 'login',
+//         'action'     => 'login',
+//     ]
+// );
 
-$router->add('/login', [
-        'controller' => 'login',
-        'action'     => 'login',
-    ]
-);
+// $router->add('/register', [
+//         'controller' => 'register',
+//         'action'     => 'register',
+//     ]
+// );
 
-$router->add('/register', [
-        'controller' => 'register',
-        'action'     => 'register',
-    ]
-);
-
-$router->add('/reset',[
-        'controller' => 'reset',
-        'action'     => 'reset',
-    ]
-);
-
-return $router;
+// $router->add('/reset',[
+//         'controller' => 'reset',
+//         'action'     => 'reset',
+//     ]
+// );

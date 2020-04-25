@@ -29,3 +29,12 @@ return new \Phalcon\Config([
         'baseUri'        => getenv('BASE_URI') ? : '/',
     ]
 ]);
+
+
+// 'adapter'     => 'Sqlsrv',
+        // 'host'        => 'POOTRETH',
+        // 'username'    => 'sa',
+        // 'password'    => '51289820',
+        // 'port'        => '1433',
+        // 'dbname'      => 'lesaja-murid',
+        // 'charset'     => 'utf8',
