@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<?php echo $this->tag->form("dashboard"); ?> 
+    {{ flashSession.output() }}
+    {{ form('login/loginSubmit', 'method': 'post') }}
     <div class="box" align = "center"> 
         <div class="content" align="center">
             <p>
-            <?php echo Phalcon\Tag::linkTo('dashboard','<img src="img/lesaja.png" width=300>');?>
+            {{ link_to('dashboard', image('img/lesaja.png', 'width': '300')) }}
             </p>
             <br>
             <p><br>
@@ -23,18 +24,17 @@
                 <!-- <php echo $this->tag->textField("Password"); ?>   -->
             </p>  
             <h6 align="right">
-                <a href="reset" class="btn btn-link">Lupa Password?</a>
+                <a href="/reset" class="btn btn-link">Lupa Password?</a>
             </h6>
-            <button class="btn btn-login-register btn-primary:hover" type="button">MASUK</button>
+            {{ submit_button('MASUK', 'class':'btn btn-login-register btn-primary:hover') }}
             <br>
             <br>
             <div class="bottom-login" align="center">
                 <label class="register" for="register-info">Belum punya akun?</label>
-                <button class="btn btn-outline-medium" type="button">Daftar Sekarang</button>
+                <a href='/register' class="btn btn-outline-medium" type="button">Daftar Sekarang</a>
             </div>
        </div>     
     </div> 
-</form>
-</body> 
+    {{ endform()}}
 </body>
 </html>

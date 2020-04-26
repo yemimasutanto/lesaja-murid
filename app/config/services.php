@@ -4,6 +4,7 @@ declare(strict_types=1);
 use Phalcon\Escaper;
 use Phalcon\Events\Event;
 use Phalcon\Flash\Direct as Flash;
+use Phalcon\Flash\Session as FlashSession;
 use Phalcon\Mvc\Dispatcher;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\View;
@@ -114,6 +115,16 @@ $di->set('flash', function () {
     ]);
 
     return $flash;
+});
+$di->set("flashSession", function () {
+    $flashSession = new FlashSession();
+    $flashSession->setCssClasses(array(
+        'error' => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice' => 'alert alert-info',
+        'warning' => 'alert alert-warning'
+    ));
+    return $flashSession;
 });
 
 /**

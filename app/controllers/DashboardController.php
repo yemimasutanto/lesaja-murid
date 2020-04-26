@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Controllers\Dashboard;
+namespace App\Controllers;
+
+Use App\Models\Murid;
 
 class DashboardController extends ControllerBase
 {
@@ -9,8 +11,8 @@ class DashboardController extends ControllerBase
     public function indexAction()
     {
         $this->view->pick('dashboard/dashboard');
-        $this->response->redirect("/dashboard", true);
-        $this->view->disable();
+        // $this->response->redirect("/dashboard", true);
+        // $this->view->disable();
     }
 
 }

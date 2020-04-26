@@ -26,15 +26,6 @@ return new \Phalcon\Config([
         'pluginsDir'     => APP_PATH . '/plugins/',
         'libraryDir'     => APP_PATH . '/library/',
         'cacheDir'       => BASE_PATH . '/cache/',
-        'baseUri'        => getenv('BASE_URI') ? : '/',
+        'baseUri'        => '/',
     ]
 ]);
-
-
-// 'adapter'     => 'Sqlsrv',
-        // 'host'        => 'POOTRETH',
-        // 'username'    => 'sa',
-        // 'password'    => '51289820',
-        // 'port'        => '1433',
-        // 'dbname'      => 'lesaja-murid',
-        // 'charset'     => 'utf8',

@@ -1,8 +1,11 @@
 <?php  
+declare(strict_types=1);
 
-use Phalcon\Mvc\Controller;  
+namespace App\Controllers;
 
-class SignupController extends ControllerBase
+Use App\Models\Murid;
+
+class RegisterController extends ControllerBase
 {  
     public function indexAction(){
     }

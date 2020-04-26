@@ -1,4 +1,4 @@
-<?php
+<!-- <php
 
 use Phalcon\Mvc\Router;
 
@@ -8,20 +8,72 @@ $router = $di->getRouter();
 
 $router->handle($_SERVER['REQUEST_URI']);
 
-// $router->add('/login', [
-//         'controller' => 'login',
-//         'action'     => 'login',
-//     ]
-// );
+$router->add('/login', [
+        'controller' => 'login',
+         'action'     => 'login',
+     ]
+ );
 
-// $router->add('/register', [
-//         'controller' => 'register',
-//         'action'     => 'register',
-//     ]
-// );
+ $router->add('/register', [
+         'controller' => 'register',
+         'action'     => 'register',
+     ]
+ );
 
-// $router->add('/reset',[
-//         'controller' => 'reset',
-//         'action'     => 'reset',
-//     ]
-// );
+ $router->add('/reset',[
+        'controller' => 'reset',
+         'action'     => 'reset',
+     ]
+ ); -->
+
+ <?php
+
+/** @var \Phalcon\Mvc\Router $router */
+$router = $di->getRouter();
+$config = $di->getConfig();
+
+$router->removeExtraSlashes(true);
+
+//setting manual routes
+
+//setting automatic routes
+$router->add('/', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  'index',
+    'action' =>  'index'
+]);
+
+
+$router->add('/:controller', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  1,
+    'action' =>  'index'
+]);
+
+$router->add('/:controller/:params', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  1,
+    'action' =>  'index',
+    'params' => 2
+]);
+
+$router->add('/:controller/:action', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  1,
+    'action' =>  2,
+]);
+
+$router->add('/:controller/:action/:params', [
+    'namespace' => 'App\Controllers',
+    'controller' =>  1,
+    'action' =>  2,
+    'params' =>  3,
+]);
+
+$router->notFound([
+    'namespace' => 'App\Controllers',
+    'controller' => 'error',
+    'action' => 'notFound',
+]);
+
+$router->handle($di->get('request_uri'));

@@ -2,93 +2,72 @@
 declare(strict_types=1);
 
 namespace App\Controllers;
+Use App\Models\Murid;
 
-use App\Models\Users;
+class LoginController extends ControllerBase{
+    public function indexAction(){
+        $sessions = $this->getDI()->getShared("session");
 
-class LoginController extends ControllerBase
-{
-    public function indexAction()
-    { 
-        if ($this->request->isPost())
-        {
-            // get data
-            $data = $this->request->getPost();
-            $email = $data["email-murid"];
-            $pass = $data["password-murid"];
-            
-            // get user with this email
-            $user = Users::findFirst(
-                [
-                    'conditions' => 'email = :email:',
-                    'bind'       => [
-                        'email' => $email,
-                    ],
-                ]
-            );
+        if ($sessions->has("AUTH_ID")) {
+            //if user is already logged we dont need to do anything 
+            // so we redirect them to the main page
+            return $this->response->redirect("/dashboard");
+        }
+    }
 
-            // if email found
-            if ($user) 
-            {   
-                // check password
-                $check = $this
-                    ->security
-                    ->checkHash($pass, $user->pass);
-                
-                // if true
-                if (true === $check) 
-                {   
-                    // check user disable
-                    if ($user->active != 1) 
-                    {
-                        $this->flashSession->error("User Disabled");
-                        return $this->response->redirect('login');
-                    }
-                    // active user
-                    else
-                    {
-                        // Set a session
-                        $this->session->set('auth_id', $user->id);
-                        $this->session->set('auth_name', $user->name);
-                        $this->session->set('auth_email', $user->email);
-                        $this->session->set('auth_created', $user->created);
-                        $this->session->set('auth_updated', $user->updated);
-                        //$this->session->set('auth_ismember', $user->ismember);
-                        
-                        // Go to User
-                        // if ($user->roles == 0) 
-                        // {
-                        //     $this->response->redirect("/");
-                        // } 
-                        // Go to Admin
-                        // else if ($user->roles == 1) 
-                        // {
-                        //     echo "ADMIN LOGGED IN:" . PHP_EOL;
-                        //     echo $this->session->get("auth_firstName") . $this->session->get("auth_lastName");
-                        //     $this->view->disable();
-                        // }
-                        // Exit 
-                        
-                            return $this->response->redirect('login');
-                        
+    public function loginSubmitAction(){
+        $sessions = $this->getDI()->getShared("session");
 
-                    }
-                }
+        if ($sessions->has("AUTH_ID")) {
+            //if user is already logged we dont need to do anything 
+            // so we redirect them to the main page
+            return $this->response->redirect("/dashboard");
+        }
 
-                // wrong password
-                else
-                {
-                    echo "Wrong email or password";
-                    $this->view->disable();
-                }
-            } 
-            
-            // user not found
-            else 
-            {
-                echo "Wrong email or password";
-                $this->view->disable();
+        if ($this->request->isPost()) {
+
+            $email_murid = $this->request->getPost("email");
+            $password_murid = $this->request->getPost("password");
+
+            if ($email_murid === "") {
+                $this->flashSession->error("Isi email anda");
+                //pick up the same view to display the flash session errors
+                return $this->view->pick("login/index");
             }
 
+            if ($password_murid === "") {
+                $this->flashSession->error("Password anda kosong");
+                //pick up the same view to display the flash session errors
+                return $this->view->pick("login/index");
+            }
+
+            $user = Murid::findFirst([ 
+                'email_murid = :usern:',
+                'bind' => [
+                   'usern' => $email_murid,
+                ]
+            ]);
+
+            if ($user) {
+                if ($password === $user->password_murid){
+                    # https://docs.phalconphp.com/en/3.3/session#start
+    
+                    // Set a session
+                    $this->session->set('AUTH_ID', $user->id_murid);
+                    $this->session->set('AUTH_NAME', $user->nama_murid);
+                    $this->session->set('AUTH_EMAIL', $user->email_murid);
+                    $this->session->set('AUTH_PASS', $user->password_murid);   
+
+                    return $this->response->redirect('/dashboard');
+                }
+            } else {
+                // The validation has failed
+                $this->flashSession->error("User tidak terdaftar");
+                return $this->response->redirect('login');
+            }
+            // The validation has failed
+            $this->flashSession->error("Password Salah");
+            return $this->response->redirect('login');
+        }
     }
-}
 }
