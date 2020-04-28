@@ -572,10 +572,33 @@ body{
   }
 }
 
-/* edit profil */
-.css-3dmmu0 {
+/* halaman edit profil */
+
+/* bagian profil */
+.css-tabluar {
   -webkit-box-align: stretch;
   align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  width: 300px;
+  border-width: 0pt;
+  margin: 0pt;
+  padding: 0pt;
+  overflow: hidden;
+}
+
+/* garis persatuan */
+.css-lapisankedua {
+  -webkit-box-align: stretch;
+  align-items: center;
   display: flex;
   -webkit-box-flex: 0;
   flex-grow: 0;
@@ -587,17 +610,95 @@ body{
   flex-direction: row;
   width: 100%;
   box-sizing: content-box;
-  background-color: rgb(255, 255, 255);
-  border-bottom-color: rgb(190, 200, 208);
   justify-content: space-around;
-  border-width: 0pt 0pt 0.1rem;
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.css-lapisanketiga{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  border-width: 0pt;
   border-style: solid;
   margin: 0pt;
   padding: 0pt;
-  overflow: auto;
 }
 
-.css-1v3ribi {
+.css-boxprofile {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0pt;
+  user-select: none;
+  z-index: 1;
+  text-align: center;
+  min-height: 1.6rem;
+  border-bottom-color: #FF7408;
+  /* ketebalan garis */
+  border-width: 0pt 0pt 0.3rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 1.6rem 2.4rem;
+}
+
+.css-boxprofile:hover{
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0ms ease 0ms;
+}
+
+.css-editborder {
+  -webkit-box-align: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    min-height: 0pt;
+    min-width: 0pt;
+    color: #FF7408;
+    user-select: none;
+    flex-direction: row;
+    border-width: 0pt;
+    border-style: solid;
+    margin: 0pt;
+    padding: 0pt;
+}
+
+.css-active-title {
+  box-sizing: border-box;
+  font-family: "Google Sans";
+  font-style: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  color: #FF7408;
+  border-width: 0px;
+  font-variant: normal;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+/* bagian password */
+.css-boxpassword {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
@@ -612,11 +713,15 @@ body{
   user-select: none;
   border-width: 0pt;
   border-style: solid;
-  margin: 0pt 1.6rem 0pt 0pt;
+  margin: 0pt;
   padding: 0pt;
 }
 
-.css-qe9cpj {
+.css-boxpassword:last-child {
+  margin-right: 0rem;
+}
+
+.css-lapisankeduaa {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
@@ -630,8 +735,8 @@ body{
   user-select: none;
   z-index: 1;
   text-align: center;
-  min-height: 3.9rem;
-  color: rgb(96, 105, 127);
+  min-height: 1.9rem;
+  color: #FF7408;
   border-bottom-color: transparent;
   border-width: 0pt 0pt 0.3rem;
   border-style: solid;
@@ -639,16 +744,70 @@ body{
   padding: 1.6rem 4rem;
 }
 
-.css-qe9cpj:hover {
-  opacity: 0.85;
-  cursor: pointer;
-  transition: opacity 0ms ease 0ms;
+.css-bordernormal {
+  -webkit-box-align: stretch;
+    align-items: stretch;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+    min-height: 0pt;
+    min-width: 0pt;
+    user-select: none;
+    flex-direction: row;
+    border-width: 0pt;
+    border-style: solid;
+    margin: 0pt;
+    padding: 0pt;
 }
 
-.css-cennm4 {
-  -webkit-box-align: stretch;
-  align-items: stretch;
+.css-title {
   box-sizing: border-box;
+  font-family: "Google Sans";
+  font-style: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  color:#FF7408;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  border-width: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+/* halaman password */
+
+
+/* bagian profil */
+.css-tabluar1 {
+  -webkit-box-align: stretch;
+  align-items: baseline;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  width: 300px;
+  border-width: 0pt;
+  margin: 0pt;
+  padding: 0pt;
+  overflow: hidden;
+}
+
+/* garis persatuan */
+.css-lapisankedua1 {
+  -webkit-box-align: stretch;
+  align-items: center;
   display: flex;
   -webkit-box-flex: 0;
   flex-grow: 0;
@@ -658,40 +817,35 @@ body{
   min-width: 0pt;
   user-select: none;
   flex-direction: row;
+  width: 150px;
+  box-sizing: content-box;
+  background-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(190, 200, 208);
+  justify-content: space-around;
+  border-width: 0pt 0pt 0.1rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.css-lapisanketiga1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
   border-width: 0pt;
   border-style: solid;
   margin: 0pt;
   padding: 0pt;
 }
 
-.css-1kpctqn {
-  box-sizing: border-box;
-  font-family: "Google Sans";
-  white-space: pre-wrap;
-  /* overflow-wrap: break-word; */
-  color: #FF7408;
-  font-size: 16px;
-  font-weight: 400;
-  /* display: flex; */
-  /* border-width: 6px; */
-  margin: 0px;
-  padding: 0px;
-}
-
-.css-1ckuaw8 {
-  box-sizing: border-box;
-  font-family: "Google Sans";
-  white-space: pre-wrap;
-  /* overflow-wrap: break-word; */
-  font-size: 16px;
-  font-weight: 400;
-  color: #FF7408;
-  /* border-width: 0px; */
-  margin: 0px;
-  padding: 0px;
-}
-
-.css-fm4lp1 {
+.css-boxprofile1 {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
@@ -705,22 +859,22 @@ body{
   user-select: none;
   z-index: 1;
   text-align: center;
-  min-height: 3.9rem;
-  color: rgb(67, 72, 86);
-  border-bottom-color: rgb(44, 179, 172);
+  min-height: 1.6rem;
+  color: rgb(96, 105, 127);
+  border-bottom-color: transparent;
   border-width: 0pt 0pt 0.3rem;
   border-style: solid;
   margin: 0pt;
-  padding: 1.6rem 4rem;
+  padding: 1.6rem 2.4rem;
 }
 
-.css-fm4lp1:hover {
+.css-boxprofile1:hover{
   opacity: 0.85;
   cursor: pointer;
   transition: opacity 0ms ease 0ms;
 }
 
-.css-cennm4 {
+.css-bordernormal1 {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
@@ -733,13 +887,31 @@ body{
   min-width: 0pt;
   user-select: none;
   flex-direction: row;
-  /* border-width: 0pt;
-  border-style: solid; */
+  border-width: 0pt;
+  border-style: solid;
   margin: 0pt;
   padding: 0pt;
 }
 
-.css-1naokgy {
+.css-title1 {
+  box-sizing: border-box;
+  font-family: "Google Sans";
+  font-style: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  color: #FF7408;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  border-width: 0px;
+  font-variant: normal;
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+/* bagian password */
+.css-boxpassword1 {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
@@ -752,28 +924,70 @@ body{
   min-height: 0pt;
   min-width: 0pt;
   user-select: none;
-  width: 100%;
   border-width: 0pt;
   border-style: solid;
   margin: 0pt;
   padding: 0pt;
-  overflow: hidden;
 }
 
-.css-13ookwh {
+.css-boxpassword1:last-child {
+  margin-right: 0rem;
+}
+
+.css-lapisankeduaa1 {
   -webkit-box-align: stretch;
   align-items: stretch;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0pt;
+  user-select: none;
+  z-index: 1;
+  text-align: center;
+  min-height: 1.9rem;
+  color: rgb(67, 72, 86);
+  border-bottom-color: #FF7408;
+  border-width: 0pt 0pt 0.3rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 1.6rem 2.4rem;
+}
+
+.css-changeborder {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
   position: relative;
   min-height: 0pt;
   min-width: 0pt;
   user-select: none;
+  flex-direction: row;
   border-width: 0pt;
   border-style: solid;
   margin: 0pt;
   padding: 0pt;
-  flex: 1 1 0%;
+}
+
+.css-title-active1 {
+  box-sizing: border-box;
+  font-family: "Google Sans";
+  font-style: inherit;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  color: #FF7408;
+  border-width: 0px;
+  font-variant: normal;
+  margin: 0px;
+  padding: 0px;
 }

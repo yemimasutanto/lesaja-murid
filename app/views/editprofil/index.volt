@@ -14,35 +14,34 @@
             <p>
                 {{ link_to('login', image('img/lesaja.png', 'width': '225')) }}
             </p>
-            <div class="css-13ookwh">
-                <div class="css-3dmmu0">
-                    <div class="css-1v3ribi">
-                        <div class="css-qe9cpj">
-                                <p class="css-1kpctqn">Profile</p>
+            <div class="css-tabluar">
+                <div class="css-lapisankedua">
+                    <div class="css-lapisanketiga">
+                        <div class="css-boxprofile">
+                            <div class="css-editborder">
+                                <a herf='/editprofil' class="css-active-title">Profile</a>
+                            </div>
                         </div>
+                        
                     </div>
-                    <div class="css-1v3ribi">
-                        <div class="css-fm4lp1">
-                            <p class="css-1ckuaw8">Password</p>
+                    <div class="css-boxpassword">
+                        <div class="lapisankeduaa">
+                            <div class="css-bordernormal">
+                                <a href='/changepassword' class="css-title">Password</a>
+                            </div>                                
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <h5><br>
-            <label class="text-reset" for="reset">Change Password</label>
-            </h5> -->
-            <p><br>
-            <input class="form-control mr-sm-2" name=nama type="text" placeholder="Masukkan Password Lama">
+            <p><br><br>
+            <input class="form-control mr-sm-2" name="nama" type="text" placeholder="<?php echo $this->session->get('AUTH_NAME'); ?>">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name=email type="email" placeholder="Masukkan Password Baru">
-            </p>
-            <p><br>
-            <input class="form-control mr-sm-2" name=new-pwd type="password" placeholder="Konfirmasi Password Baru">
-            </p><br>
+            <input class="form-control mr-sm-2" name="email" type="email" placeholder="<?php echo $this->session->get('AUTH_EMAIL'); ?>">
+            </p><br><br>
             <div align="center">
                 <a href='/' class="btn btn-outline-small btn-primary:hover" type="button">CANCEL</a>
-                <a href='/login' class="btn btn-submit btn-primary:hover" type="button">SUBMIT</a>
+                <a href='/dashboard' class="btn btn-submit btn-primary:hover" type="button">SUBMIT</a>
             </div>
        </div>   
     </div> 
