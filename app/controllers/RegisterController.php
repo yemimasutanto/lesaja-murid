@@ -29,7 +29,7 @@ class RegisterController extends ControllerBase
             ]
         );
 
-        if (!$exist){
+        if ($exist){
             $this->flashSession->error("Email telah terdaftar");
             $this->response->redirect('register');
         }
@@ -46,17 +46,6 @@ class RegisterController extends ControllerBase
                 $user->email_murid = $email_murid;
                 $user->password_murid = $password_murid;
 
-                // Check guru
-                // if (strpos($user->email_tentor, "@lesaja.com") !== false)
-                // {
-                //     $user->roles = 1; // Guru
-                // }
-                // else
-                // {
-                //     $user->roles = 0; // User
-                // }
-                
-                // Store and check for errors
                 $success = $user->save();
 
                 // Log the user/admin in

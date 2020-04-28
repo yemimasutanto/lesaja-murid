@@ -181,31 +181,64 @@ body{
     background-color:#fff;
   }
 
-  .navbar-default .navbar-nav .nav-link {
+  .navbar-default .navbar-nav .nav-link{
     color:#FF7408;
+    justify-content: center;
   }
 
+  .navbar-nav{
+    justify-content: center;
+    align-content: center;
+  }
+
+  .sr-only{
+    width: 100%;
+  }
+
+  .nav-item{
+    display: inline-block;
+    height: 26px;
+    color: #FF7408;
+    align-items: center;
+    margin-right: 50px;
+    margin-top: 16px;
+    padding: initial;
+  }
+
+  .kelasaya{
+    margin-top: 12px;
+    margin-left: 16px;
+    width: 80px;
+    align-items: center;
+    vertical-align: middle;
+  }
 
   .navbar-light .navbar-brand {
     color:#FF7408;
   }
 
   .navbar-brand {
-    display: inline-block;
-    margin-left: 16px;
+    display: block;
+    padding-left: 24px;
+    align-content: center;
   }
 
   .navbar-brand1 {
     margin-left: 4px;
     margin-right: 24px;
   }
+
+  .formbar{
+    margin-left: -36px;
+  }
+
   .search-bar{
-    width: 481px;
+    width: 461px;
     height: 45px;
     border-radius: 10px;
-    margin-left: 20px;
+    margin-left: 10px;
     padding-left: 12px;
-    padding-right: 12px;
+    margin-top: 4px;
     border-color: #FF7408;
     color: #FF7408;
   }
@@ -214,8 +247,8 @@ body{
     width: 481px;
     height: 45px;
     border-radius: 10px;
-    margin-left: 42px;
-    margin-top: 12px;
+    margin-left: 32px;
+    margin-top: 20px;
     padding-left: 18px;
     border-color: #FF7408;
     color: #FF7408;
@@ -225,16 +258,25 @@ body{
       width: 36px;
       height: 36px;
       background-color: #fff;
-      margin-left: -60px;
-      margin-top: 4px;
+      margin-left: 425px;
+      margin-top: -72px;
   }
+
+  .css-searchbar{
+    margin-left: 6px;
+    margin-top: 12px;
+  }
+
+.mr-sm-2, .mx-sm-2 {
+    margin-right: 0.5rem !important;
+}
 
   .search-btn1{
     width: 36px;
     height: 36px;
     background-color: #fff;
-    margin-left: -60px;
-    margin-top: 16px;
+    margin-left: 470px;
+    margin-top: -42px;
 }
 
   .btn-dash{
@@ -548,27 +590,18 @@ body{
     display: flex !important;
   }
 
-  @media (min-width: 576px) {
-  .container {
-    max-width: 540px;
+/* Responsive layout - when the screen is less than 768px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 768px) {
+  .row {   
+    flex-direction: column;
   }
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 992px) {
-  .container {
-    max-width: 960px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container {
-    max-width: 1140px;
+/* Responsive layout - when the screen is less than 500px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    width: 100%;
   }
 }
 
@@ -778,11 +811,7 @@ body{
   padding: 0px;
 }
 
-
-
 /* halaman password */
-
-
 /* bagian profil */
 .css-tabluar1 {
   -webkit-box-align: stretch;
@@ -990,4 +1019,41 @@ body{
   font-variant: normal;
   margin: 0px;
   padding: 0px;
+}
+
+.css-btn{
+  margin-right: 12px;
+}
+
+.css-btn-1{
+  margin-left: 12px;
+}
+
+::placeholder{
+  color: #FF7408;
+}
+
+.indexbtn{
+  display: flex;
+  width: 250px;
+  height: 45px;
+  padding-right: 10px;
+  justify-content: center;
+  margin-top: 16px;
+  margin-left: 8px;
+}
+
+.btnregis{
+  text-align: center;
+  margin-left: -32px;
+  margin-right: 20px;
+  width: 140px;
+  height: 45px;
+}
+
+.btnmasuk{
+  text-align: center;
+  margin-right: 80px;
+  width: 140px;
+  height: 45px;
 }
