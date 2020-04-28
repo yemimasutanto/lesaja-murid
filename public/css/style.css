@@ -185,8 +185,9 @@ body{
     color:#FF7408;
   }
 
+
   .navbar-light .navbar-brand {
-    color:#fff;
+    color:#FF7408;
   }
 
   .navbar-brand {
@@ -194,24 +195,47 @@ body{
     margin-left: 16px;
   }
 
+  .navbar-brand1 {
+    margin-left: 4px;
+    margin-right: 24px;
+  }
   .search-bar{
     width: 481px;
     height: 45px;
     border-radius: 10px;
     margin-left: 20px;
     padding-left: 12px;
-    padding-right: 50px;
+    padding-right: 12px;
+    border-color: #FF7408;
+    color: #FF7408;
+  }
+
+  .search-bar1{
+    width: 481px;
+    height: 45px;
+    border-radius: 10px;
+    margin-left: 42px;
+    margin-top: 12px;
+    padding-left: 18px;
     border-color: #FF7408;
     color: #FF7408;
   }
 
   .search-btn{
-      width: 40x;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       background-color: #fff;
       margin-left: -60px;
-      margin-top: 2px;
+      margin-top: 4px;
   }
+
+  .search-btn1{
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    margin-left: -60px;
+    margin-top: 16px;
+}
 
   .btn-dash{
       width: 123px;
@@ -221,7 +245,7 @@ body{
       background-color:#FF7408;
       border-color: #FF7408;
       margin-left: 12px;
-      margin-right: 36px;
+      margin-right: 12px;
   }
 
   .btn-join{
@@ -250,8 +274,7 @@ body{
   }
   
   .navbar-nav .dropdown-menu {
-    position: static;
-    float: none;
+    position: fixed;
     color: #FF7408;
   }
 
@@ -307,7 +330,7 @@ body{
     position: absolute;
     align-items: center;
     justify-content: center;
-    border-radius: 10PX;
+    border-radius: 10px;
     margin: auto;
   }
   
@@ -478,7 +501,7 @@ body{
   .dropdown-menu-right {
     right: 0;
     left: auto;
-    margin-right: 20px;
+    margin-right: 2px;
   }
 
   .dropdown-item {
@@ -498,6 +521,14 @@ body{
     margin-top: 20px;
     margin-left: 80px;
     margin-right: 80px;
+    font-family: 'Google Sans', Arial, sans-serif;
+    color: #212529;
+  }
+
+  .nama1{
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-right: 30px;
     font-family: 'Google Sans', Arial, sans-serif;
     color: #212529;
   }
@@ -539,4 +570,210 @@ body{
   .container {
     max-width: 1140px;
   }
+}
+
+/* edit profil */
+.css-3dmmu0 {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: content-box;
+  background-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(190, 200, 208);
+  justify-content: space-around;
+  border-width: 0pt 0pt 0.1rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 0pt;
+  overflow: auto;
+}
+
+.css-1v3ribi {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  border-width: 0pt;
+  border-style: solid;
+  margin: 0pt 1.6rem 0pt 0pt;
+  padding: 0pt;
+}
+
+.css-qe9cpj {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0pt;
+  user-select: none;
+  z-index: 1;
+  text-align: center;
+  min-height: 3.9rem;
+  color: rgb(96, 105, 127);
+  border-bottom-color: transparent;
+  border-width: 0pt 0pt 0.3rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 1.6rem 4rem;
+}
+
+.css-qe9cpj:hover {
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0ms ease 0ms;
+}
+
+.css-cennm4 {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  flex-direction: row;
+  border-width: 0pt;
+  border-style: solid;
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.css-1kpctqn {
+  box-sizing: border-box;
+  font-family: "Google Sans";
+  white-space: pre-wrap;
+  /* overflow-wrap: break-word; */
+  color: #FF7408;
+  font-size: 16px;
+  font-weight: 400;
+  /* display: flex; */
+  /* border-width: 6px; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.css-1ckuaw8 {
+  box-sizing: border-box;
+  font-family: "Google Sans";
+  white-space: pre-wrap;
+  /* overflow-wrap: break-word; */
+  font-size: 16px;
+  font-weight: 400;
+  color: #FF7408;
+  /* border-width: 0px; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.css-fm4lp1 {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-width: 0pt;
+  user-select: none;
+  z-index: 1;
+  text-align: center;
+  min-height: 3.9rem;
+  color: rgb(67, 72, 86);
+  border-bottom-color: rgb(44, 179, 172);
+  border-width: 0pt 0pt 0.3rem;
+  border-style: solid;
+  margin: 0pt;
+  padding: 1.6rem 4rem;
+}
+
+.css-fm4lp1:hover {
+  opacity: 0.85;
+  cursor: pointer;
+  transition: opacity 0ms ease 0ms;
+}
+
+.css-cennm4 {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  flex-direction: row;
+  /* border-width: 0pt;
+  border-style: solid; */
+  margin: 0pt;
+  padding: 0pt;
+}
+
+.css-1naokgy {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  width: 100%;
+  border-width: 0pt;
+  border-style: solid;
+  margin: 0pt;
+  padding: 0pt;
+  overflow: hidden;
+}
+
+.css-13ookwh {
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-flex: 0;
+  position: relative;
+  min-height: 0pt;
+  min-width: 0pt;
+  user-select: none;
+  border-width: 0pt;
+  border-style: solid;
+  margin: 0pt;
+  padding: 0pt;
+  flex: 1 1 0%;
 }

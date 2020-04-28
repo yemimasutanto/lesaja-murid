@@ -8,55 +8,53 @@ Use App\Models\Murid;
 class RegisterController extends ControllerBase
 {  
     public function indexAction(){
+
     }
      
-     public function registerAction(){
-        $user = new Users();
+    public function registerSubmitAction(){
+        $user = new Murid();
 
         // get value
-        $name = $this->request->getPost('nama_murid', 'string');
-        $email = $this->request->getPost('email_murid', 'string');
-        $pass = $this->request->getPost('password_murid', 'string');
+        $nama_murid = $this->request->getPost('nama', 'string');
+        $email_murid = $this->request->getPost('email', 'string');
+        $password_murid = $this->request->getPost('password', 'string');
         $confirm = $this->request->getPost('confirm', 'string');
 
-        $exist = Users::findFirst(
+        $exist = Murid::findFirst(
             [
-                'conditions' => 'email = :email:',
+                'conditions' => 'email_murid = :email:',
                 'bind'       => [
-                    'email' => $email,
+                    'email' => $email_murid,
                 ],
             ]
         );
 
-        if ($exist){
-            echo "Sorry, the following problems were generated: Email already exist";
-            $this->view->disable();
+        if (!$exist){
+            $this->flashSession->error("Email telah terdaftar");
+            $this->response->redirect('register');
         }
 
         else{
-            if ($pass != $confirm){
-                echo "Sorry, the following problems were generated: Password doesn't match";
-                $this->view->disable();
+            if ($password_murid != $confirm){
+                $this->flashSession->error("Password tidak cocok");
+                $this->response->redirect('register');
+                return false;
             }
             else{
                 // set value
-                $user->name = $name;
-                $user->email = $email;
-                $user->pass = $this->security->hash($pass);
-                $user->active = 1;
-                $user->created = time();
-                $user->updated = time();
-                $user->ismember = 0;
+                $user->nama_murid = $nama_murid;
+                $user->email_murid = $email_murid;
+                $user->password_murid = $password_murid;
 
-                // Check admin
-                if (strpos($user->email_tentor, "@lesaja.com") !== false)
-                {
-                    $user->roles = 1; // Guru
-                }
-                else
-                {
-                    $user->roles = 0; // User
-                }
+                // Check guru
+                // if (strpos($user->email_tentor, "@lesaja.com") !== false)
+                // {
+                //     $user->roles = 1; // Guru
+                // }
+                // else
+                // {
+                //     $user->roles = 0; // User
+                // }
                 
                 // Store and check for errors
                 $success = $user->save();
@@ -64,27 +62,23 @@ class RegisterController extends ControllerBase
                 // Log the user/admin in
                 if ($success) {
                     // Set a session
-                    $this->session->set('auth_id', $user->id);
-                    $this->session->set('auth_name', $user->firstName);
-                    $this->session->set('auth_email', $user->email);
-                    $this->session->set('auth_created', $user->created);
-                    $this->session->set('auth_updated', $user->updated);
-                    $this->session->set('auth_ismember', $user->ismember);
+                    $this->session->set('AUTH_ID', $user->id_murid);
+                    $this->session->set('AUTH_NAME', $user->nama_murid);
+                    $this->session->set('AUTH_EMAIL', $user->email_murid);
+                    $this->session->set('AUTH_PASS', $user->password_murid);  
+
+                    $this->response->redirect("/dashboard");
                     
                     // Go to User
-                    if ($user->roles == 0) 
-                    {
-                        $this->response->redirect("/");
-                    } 
-                    // Exit 
-                    else 
-                    {
-                        return $this->response->redirect('login');
+                    // if ($user->roles == 0) 
+                    // {
+                    //     $this->response->redirect("/dashboard");
+                    // } 
                     }
-                } 
-                else {
-                    echo "Sorry, the following problems were generated: " . implode('<br>', $user->getMessages());
-                    $this->view->disable();
+                    // Exit 
+                else
+                {
+                    return $this->response->redirect('login');
                 }
     
             }

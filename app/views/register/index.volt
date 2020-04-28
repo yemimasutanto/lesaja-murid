@@ -7,25 +7,26 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<?php echo $this->tag->form("dashboard"); ?> 
+    {{ flashSession.output() }}
+    {{ form('register/registerSubmit', 'method': 'post') }}
     <div class="box-register" align = "center"> 
         <div class="content-register" align="center">
             <p>
-                <?php echo Phalcon\Tag::linkTo('dashboard','<img src="img/lesaja.png" width=250>');?>
+                {{ link_to('dashboard', image('img/lesaja.png', 'width': '250')) }}
             </p>
             <p>
-                <input class="form-control mr-sm-2" type="text" placeholder="Nama">
+                <input class="form-control mr-sm-2" name="nama" type="text" placeholder="Nama" required>
             </p>
             <p><br>
-                <input class="form-control mr-sm-2" type="email" placeholder="Email">
+                <input class="form-control mr-sm-2" name = "email" type="email" placeholder="Email" required>
             </p>
             <p><br>
-                <input class="form-control mr-sm-2" type="password" placeholder="Password Baru">
+                <input class="form-control mr-sm-2" name = "password" type="password" placeholder="Password" required>
             </p>
             <p><br>
-                <input class="form-control mr-sm-2" type="password" placeholder="Konfirmasi Password Baru">
+                <input class="form-control mr-sm-2" name = "confirm" type="password" placeholder="Konfirmasi Password" required>
             </p><br>   
-                <a href='/dashboard' class="btn btn-login-register btn-primary:hover" type="button">DAFTAR</a>
+                {{ submit_button('DAFTAR', 'class':'btn btn-login-register btn-primary:hover') }}
             <br>
             <br>
             <div class="bottom-login" align="center">
@@ -34,7 +35,6 @@
             </div>
        </div>     
     </div> 
-</form>
-</body> 
+    {{ endform()}}
 </body>
 </html>

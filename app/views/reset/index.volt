@@ -7,30 +7,31 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<?php echo $this->tag->form("reset-password"); ?> 
+{{ flashSession.output() }}
+{{ form('reset/resetSubmit', 'method': 'post') }}
     <div class="box" align = "center"> 
         <div class="content" align="center">
             <p>
-            <?php echo Phalcon\Tag::linkTo('dashboard','<img src="img/lesaja.png" width=250>');?>
+                {{ link_to('login', image('img/lesaja.png', 'width': '250')) }}
             </p>
             <h5><br>
             <label class="text-reset" for="reset">Reset Password</label>
             </h5>
             <p><br>
-            <input class="form-control mr-sm-2" type="password" placeholder="Email">
+            <input class="form-control mr-sm-2" name=email type="email" placeholder="Email">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" type="password" placeholder="Masukkan Password Lama">
+            <input class="form-control mr-sm-2" name=old-pwd type="password" placeholder="Masukkan Password Lama">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" type="password" placeholder="Konfirmasi Password Baru">
+            <input class="form-control mr-sm-2" name=new-pwd type="password" placeholder="Konfirmasi Password Baru">
             </p><br>
             <div align="center">
-                <a href='/login' class="btn btn-outline-small btn-primary:hover" type="button">CANCEL</a>
-                <a href='/login' class="btn btn-submit btn-primary:hover" type="button">SUBMIT</a>
+                <a href='/' class="btn btn-outline-small btn-primary:hover" type="button">CANCEL</a>
+                {{ submit_button('SUBMIT', 'class':'btn btn-submit btn-primary:hover') }}
             </div>
        </div>   
     </div> 
-</form>
+{{ endform()}}
 </body>
 </html>

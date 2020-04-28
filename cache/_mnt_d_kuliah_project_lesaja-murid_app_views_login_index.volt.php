@@ -16,11 +16,11 @@
             </p>
             <br>
             <p><br>
-            <input class="form-control mr-sm-2" type="text" placeholder="Email">
+            <input class="form-control mr-sm-2" name=email type="text" placeholder="Email">
                 <!-- <php echo $this->tag->textField("Email"); ?> -->
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" type="password" placeholder="Password">
+            <input class="form-control mr-sm-2" name=password type="password" placeholder="Password">
                 <!-- <php echo $this->tag->textField("Password"); ?>   -->
             </p>  
             <h6 align="right">
