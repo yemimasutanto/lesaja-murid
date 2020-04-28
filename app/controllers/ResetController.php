@@ -10,10 +10,8 @@ class ResetController extends ControllerBase
         
     }  
 
-    
     public function resetSubmitAction()
     {
-        
         if ($this->request->isPost()) 
         {
             // echo "test";

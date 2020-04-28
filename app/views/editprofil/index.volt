@@ -39,9 +39,11 @@
             <p><br>
             <input class="form-control mr-sm-2" name="email" type="email" placeholder="<?php echo $this->session->get('AUTH_EMAIL'); ?>">
             </p><br><br>
-            <div align="center">
-                <a href='/' class="btn btn-outline-small btn-css btn-primary:hover" type="button">CANCEL</a>
-                <a href='/dashboard' class="btn btn-submit btn-css-1 btn-primary:hover" type="button">SUBMIT</a>
+            <div class="btnbawah" align="center">
+                <div align="center">
+                    <a href='/' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
+                    <a href='/dashboard' class="btn btn-submit btnyesbtn-css-1 btn-primary:hover" type="button">SUBMIT</a>
+                </div>
             </div>
        </div>   
     </div> 

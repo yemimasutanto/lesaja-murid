@@ -41,9 +41,11 @@
             <p><br>
             <input class="form-control mr-sm-2" name="new-pwd" type="password" placeholder="Konfirmasi Password Baru">
             </p><br>
-            <div align="center">
-                <a href='/' class="btn btn-outline-small btn-primary:hover" type="button">CANCEL</a>
-                <a href='/dashboard' class="btn btn-submit btn-primary:hover" type="button">SUBMIT</a>
+            <div class="btnbawah" align="center">
+                <div align="center">
+                    <a href='/' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
+                    <a href='/dashboard' class="btn btn-submit btnyesbtn-css-1 btn-primary:hover" type="button">SUBMIT</a>
+                </div>
             </div>
        </div>   
     </div> 
