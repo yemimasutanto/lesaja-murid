@@ -4,12 +4,11 @@ Namespace App\Models;
 
 use Phalcon\Mvc\Model;
 
-class Murid extends Model
+class Kelas extends Model
 {
     // variables
     public $id_kelas;
-    public $nama_mapel;
-    public $jenjang;
+    public $id_mapel;
     public $id_tentor;
     public $id_murid;
 

@@ -14,8 +14,6 @@ class ResetController extends ControllerBase
     {
         if ($this->request->isPost()) 
         {
-            // echo "test";
-            // $this->view->disable();
             $email_murid = $this->request->getPost("email");
             $password_murid = $this->request->getPost("old_pwd");
             $confirm = $this->request->getPost("new_pwd");
@@ -62,9 +60,9 @@ class ResetController extends ControllerBase
                     $exist->password_murid = $confirm;
                     
                     // Store and check for errors
-                    $success = $user->update();
+                    $success = $exist->update();
                     $this->flashSession->success("Password berhasil diubah!");
-                    //return $this->response->redirect('login');
+                    return $this->response->redirect('login');
                 }
             }
         }

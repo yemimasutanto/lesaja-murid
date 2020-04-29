@@ -47,6 +47,7 @@ class RegisterController extends ControllerBase
                 $user->password_murid = $password_murid;
 
                 $success = $user->save();
+                $this->flashSession->success("Berhasil terdaftar!");
 
                 // Log the user/admin in
                 if ($success) {
@@ -69,7 +70,6 @@ class RegisterController extends ControllerBase
                 {
                     return $this->response->redirect('login');
                 }
-    
             }
         }
      }

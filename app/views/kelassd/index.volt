@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lesaja</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <form action="edit/editSubmit" method="POST">
+    {{ flashSession.output() }}
+    {{ form('kelassd/kelasSD', 'method': 'post') }}
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Brand -->
         <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>

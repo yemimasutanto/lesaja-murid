@@ -2,49 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lesaja</title>
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- Brand -->
-            <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
+    {{ flashSession.output() }}
+    {{ form('kelassd/kelasSD', 'method': 'post') }}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Brand -->
+        <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
 
-            <!-- Links -->
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <div class="nav-item">
-                        <div class="kelasaya"align="center">
-                            <a href="#" width="50">Kelas Saya<span class="sr-only"></a>
+        <!-- Links -->
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto align-middle">
+                <li class="nav-item align-middle" align="center">
+                    <a href="/kelas" align="center">Kelas Saya<span class="sr-only"></a>
+                </li>
+                <nav>
+                    <form name="form" action="/dashboard/search" method="post">
+                        <div class="align-middle">
+                            <input class="search-bar1 mr-sm-2 " type="text" name = "cari" placeholder="Kelas apa yang kamu ingin ikuti hari ini?" width=100>
                         </div>
+                        <div class="search-btn1">
+                            <button class="btn" name = "submit" type="submit">
+                                <img src="img/search.png" width=20>
+                            </button>
+                        </div>
+                    </form>
+                </nav>
+                <li>
+                    <label class="nama1" for="nama_murid"><?php echo $this->session->get('AUTH_NAME'); ?></label>
+                </li>
+                <li>
+                    <button class="btn dropdwon-toggle" id="nama_murid" data-toggle="dropdown">
+                        <img src="img/user.png">
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="/editprofil">Edit Profile</a>
+                        <a class="dropdown-item" href="/">Keluar</a>
                     </div>
-                    <nav class="formbar">
-                        <form name="form" action="/dashboard/search" method="post">
-                            <div class="css-searchbar">
-                                <input class="search-bar mr-sm-2" type="text" name = "cari" placeholder="Kelas apa yang kamu ingin ikuti hari ini?" width=100>
-                                <a href="#" class="btn search-btn" name = "submit" type="submit">
-                                    <img src="img/search.png">
-                                </a>
-                            </div>
-                        </form>
-                    </nav>
-                    <div class="indexbtn" align="center">
-                        <div class="btnregis" align="center">
-                            <a href="/register" class="btn btn-dash-outline" type="button">DAFTAR</a>
-                        </div>
-                        <div class="btnmasuk" align="center">
-                            <a href="/login" class="btn btn-dash" href="/login" type="button">MASUK</a>
-                        </div>
-                    </div>
-            </div>
-        </nav>
-    </header>
+                </li>
+        </div>
+    </nav>
 
     <!-- content -->
-    <div>
+    <div class="kelas-baru">
         <div class="box-kelas">
             <div class="cover-mapel">
                 <div class="mapel-judul" align="left">
@@ -54,8 +57,8 @@
                     <label class="judul" for="judul">Jenjang</label><br>
                     <label class="judul" for="judul">SD</label><br>
                     <br>
-                    <label for="other">Lihat lainnya</label>
-                    <a href="/login" class="btn btn-link-other">
+                    <label for="other">Lihat Info Lainnya</label>
+                    <a href='/kelas_sd' class="btn btn-link-other">
                         <img src="img/arrow.png" width=12px>
                     </a>
                 </div>
@@ -67,9 +70,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="indonesia">Bahasa Indonesia</label>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-2" align="center">
@@ -80,9 +83,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="tik">TIK</label><br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-3" align="center">
@@ -93,9 +96,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="math">Ilmu Pengetahuan Sosial</label>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -109,8 +112,8 @@
                     <label class="judul" for="judul">Jenjang</label><br>
                     <label class="judul" for="judul">SMP</label><br>
                     <br>
-                    <label for="other">Lihat lainnya</label>
-                    <a href="/login" class="btn btn-link-other">
+                    <label for="other">Lihat Info Tentor</label>
+                    <a href='/kelas_smp' class="btn btn-link-other">
                         <img src="img/arrow.png" width=12px>
                     </a>
                 </div>
@@ -123,9 +126,9 @@
                         <br>
                         <label for="fisika">Fisika</label>
                         <br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-2">
@@ -137,9 +140,9 @@
                         <br>
                         <label for="kimia">Kimia</label>
                         <br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-3">
@@ -151,9 +154,9 @@
                         <br>
                         <label for="math">Biologi</label>
                         <br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -167,8 +170,8 @@
                     <label class="judul" for="judul">Jenjang</label><br>
                     <label class="judul" for="judul">SMA</label><br>
                     <br>
-                    <label for="other">Lihat lainnya</label>
-                    <a href="/login" class="btn btn-link-other">
+                    <label for="other">Lihat Info Tentor</label>
+                    <a href='/kelas_sma' class="btn btn-link-other">
                         <img src="img/arrow.png" width=12px>
                     </a>
                 </div>
@@ -180,9 +183,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="math">Matematika</label>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-2">
@@ -193,9 +196,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="fisika">Fisika</label><br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
                 <div class="mapel-3">
@@ -206,9 +209,9 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="english">Bahasa Inggris</label><br>
-                        <a href="/login" class="btn btn-primary:hover btn-join">
+                        <button class="btn btn-primary:hover btn-join">
                             Join Kelas
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -217,7 +220,6 @@
     <div class="footer">
         <label for="footer">&#169;2020, Lesaja Murid</label>
     </div>
-    <script src=”https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js”></script>
-    <script src=”js/bootstrap.min.js”></script>
+    </form>
 </body>
 </html>

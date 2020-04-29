@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Reset Password</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
 <body>
 {{ flashSession.output() }}
@@ -18,13 +19,13 @@
             <label class="text-reset" for="reset">Reset Password</label>
             </h5>
             <p><br>
-            <input class="form-control mr-sm-2" name=email type="email" placeholder="Email">
+            <input class="form-control mr-sm-2" name="email" type="email" placeholder="Email">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name=old-pwd type="password" placeholder="Masukkan Password Lama">
+            <input class="form-control mr-sm-2" name="old_pwd" type="password" placeholder="Masukkan Password Lama">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name=new-pwd type="password" placeholder="Konfirmasi Password Baru">
+            <input class="form-control mr-sm-2" name="new_pwd" type="password" placeholder="Konfirmasi Password Baru">
             </p><br>
             <div align="center">
                 <a href='/' class="btn btn-outline-small btn-primary:hover" type="button">CANCEL</a>

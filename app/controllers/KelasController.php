@@ -56,4 +56,18 @@ class BookingController extends ControllerBase
                 return $this->response->redirect('dashboard');
             }
         }
+
+        public function getListKelas($nama_mapel, $jenjang){
+            $this->db->query("SELECT k.*, t.nama_tentor
+                              FROM kelas k
+                              INNER JOIN tentor t
+                              ON t.id_tentor = k.id_tentor 
+                              ORDER BY id_kelas ASC");
+
+
+            // Assign the results
+            $results = $this->db->resultset();
+
+            return $results;
+        }
 }
