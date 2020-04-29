@@ -8,19 +8,18 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
 <body class="full">
-    <header>
+    <header class="headerapi" align="center">
         <form action="edit/editSubmit" method="POST">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <!-- Brand -->
             <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
-
-            <!-- Links -->
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto align-middle">
                     <li class="nav-item align-middle" align="center">
-                        <a href="/kelas" align="center">Kelas Saya<span class="sr-only"></a>
+                        <div class="kelasaya" align="center"> 
+                            <a href="/kelas" align="center">Kelas Saya<span class="sr-only"></a>
+                        </div>
                     </li>
-                    <nav>
+                    <div class="tengah">
                         <form name="form" action="/dashboard/search" method="post">
                             <div class="align-middle">
                                 <input class="search-bar1 mr-sm-2 " type="text" name = "cari" placeholder="Kelas apa yang kamu ingin ikuti hari ini?" width=100>
@@ -31,11 +30,14 @@
                                 </button>
                             </div>
                         </form>
-                    </nav>
+                    </div>
+                    <div class="infotentor">
+                        <a href="/tentor" for="tentor">Temukan tentormu</a>
+                    </div>
                     <li>
                         <label class="nama1" for="nama_murid"><?php $hasil=explode(' ',$this->session->get('AUTH_NAME'),2); echo $hasil[0]; ?></label>
                     </li>
-                    <li>
+                    <li class="rightnav">
                         <button class="btn dropdwon-toggle" id="nama_murid" data-toggle="dropdown">
                             <img src="img/user.png">
                         </button>
@@ -49,117 +51,119 @@
     </header>
         
         <!-- content -->
-        <div>
+    <div class="contentclass" align="center">
         {{ flashSession.output() }}
         <div class="box-kelas">
-                <div class="cover-mapel">
-                    <div class="mapel-judul" align="left">
-                        <br><br><br>
-                        <img src="img/course.png" width=60px>
-                        <br><br>
-                        <label class="judul" for="judul">Jenjang</label><br>
-                        <label class="judul" for="judul">SD</label><br>
-                        <br>
-                        <label for="other">Lihat Lainnya</label>
-                        <a href='/kelas_sd' class="btn btn-link-other">
-                            <img src="img/arrow.png" width=12px>
-                        </a>
-                    </div>
-                    {% set i = 1 %}
-                    {% for mapel in mapels%}
-                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SD' %}
+            <div class="cover-mapel">
+                <div class="mapel-judul" align="left">
+                    <br><br><br>
+                    <img src="img/course.png" width=60px>
+                    <br><br>
+                    <label class="judul" for="judul">Jenjang</label><br>
+                    <label class="judul" for="judul">SD</label><br>
+                    <br>
+                    <label for="other">Lihat Info</label>
+                    <a href='/kelas_sd' class="btn btn-link-other">
+                        <img src="img/arrow.png" width=12px>
+                    </a>
+                </div>
+                {% set i = 1 %}
+                {% for mapel in mapels%}
+                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SD' %}
 
-                    <div class="mapel-{{ i }}" align="center">
-                        <div class="{{ mapel.class }}">
-                            <br><br>
-                            <img src="img/{{ mapel.img_src}}" width=60px>
-                        </div>
-                        <div class="content-mapel" align="center">
-                            <br>
-                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                                Join Kelas
-                            </a>
-                        </div>
-                    </div>
-                    {% set i=i+1 %}
-                    {% endif %}
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="box-kelas box-2">
-                <div class="cover-mapel">
-                    <div class="mapel-judul" align="left">
-                        <br><br><br>
-                        <img src="img/course.png" width=60px>
+                <div class="mapel-{{ i }}" align="center">
+                    <div class="{{ mapel.class }}">
                         <br><br>
-                        <label class="judul" for="judul">Jenjang</label><br>
-                        <label class="judul" for="judul">SMP</label><br>
+                        <img src="img/{{ mapel.img_src}}" width=60px>
+                    </div>
+                    <div class="content-mapel" align="center">
                         <br>
-                        <label for="other">Lihat Lainnya</label>
-                        <a href='/kelas_smp' class="btn btn-link-other">
-                            <img src="img/arrow.png" width=12px>
+                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                        <br>
+                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                            Join Kelas
                         </a>
                     </div>
-                    {% set i = 1 %}
-                    {% for mapel in mapels%}
-                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMP' %}
-                    <div class="mapel-{{ i }}">
-                        <div class="{{ mapel.class }}" align="center">
-                            <br><br>
-                            <img src="img/{{ mapel.img_src}}" width=80px>
-                        </div>
-                        <div class="content-mapel" align="center">
-                            <br>
-                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                            <br>
-                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                                Join Kelas
-                            </a>
-                        </div>
-                    </div>
-                    {% set i=i+1 %}
-                    {% endif %}
-                    {% endfor %}
                 </div>
-            </div>
-            <div class="box-kelas box-3">
-                <div class="cover-mapel">
-                    <div class="mapel-judul" align="left">
-                        <br><br><br>
-                        <img src="img/course.png" width=60px>
-                        <br><br>
-                        <label class="judul" for="judul">Jenjang</label><br>
-                        <label class="judul" for="judul">SMA</label><br>
-                        <br>
-                        <label for="other">Lihat Lainnya</label>
-                        <a href='/kelas_sma' class="btn btn-link-other">
-                            <img src="img/arrow.png" width=12px>
-                        </a>
-                    </div>
-                    {% set i = 1 %}
-                    {% for mapel in mapels%}
-                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMA' %}
-                    <div class="mapel-{{ i }}">
-                        <div class="{{ mapel.class }}" align="center">
-                            <br><br>
-                            <img src="img/{{ mapel.img_src}}" width=80px>
-                        </div>
-                        <div class="content-mapel" align="center">
-                            <br>
-                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                                Join Kelas
-                            </a>
-                        </div>
-                    </div>
-                    {% set i=i+1 %}
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% set i=i+1 %}
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
-    </form>
+
+        <div class="box-kelas box-2">
+            <div class="cover-mapel">
+                <div class="mapel-judul" align="left">
+                    <br><br><br>
+                    <img src="img/course.png" width=60px>
+                    <br><br>
+                    <label class="judul" for="judul">Jenjang</label><br>
+                    <label class="judul" for="judul">SMP</label><br>
+                    <br>
+                    <label for="other">Lihat Info</label>
+                    <a href='/kelas_smp' class="btn btn-link-other">
+                        <img src="img/arrow.png" width=12px>
+                    </a>
+                </div>
+                {% set i = 1 %}
+                {% for mapel in mapels%}
+                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMP' %}
+                <div class="mapel-{{ i }}">
+                    <div class="{{ mapel.class }}" align="center">
+                        <br><br>
+                        <img src="img/{{ mapel.img_src}}" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                        <br>
+                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                {% set i=i+1 %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="box-kelas box-3">
+            <div class="cover-mapel">
+                <div class="mapel-judul" align="left">
+                    <br><br><br>
+                    <img src="img/course.png" width=60px>
+                    <br><br>
+                    <label class="judul" for="judul">Jenjang</label><br>
+                    <label class="judul" for="judul">SMA</label><br>
+                    <br>
+                    <label for="other">Lihat Info</label>
+                    <a href='/kelas_sma' class="btn btn-link-other">
+                        <img src="img/arrow.png" width=12px>
+                    </a>
+                </div>
+                {% set i = 1 %}
+                {% for mapel in mapels%}
+                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMA' %}
+                <div class="mapel-{{ i }}">
+                    <div class="{{ mapel.class }}" align="center">
+                        <br><br>
+                        <img src="img/{{ mapel.img_src}}" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                        <br>
+                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                {% set i=i+1 %}
+                {% endif %}
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </body>
 </html>

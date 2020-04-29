@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
 <?= $this->flashSession->output() ?>
 <?= $this->tag->form(['reset/resetSubmit', 'method' => 'post']) ?>
     <div class="box" align = "center"> 

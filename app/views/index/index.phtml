@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body class="full">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <!-- Brand -->
@@ -21,29 +21,29 @@
                             <a href="#" width="50">Kelas Saya<span class="sr-only"></a>
                         </div>
                     </div>
-                    <nav class="formbar">
-                        <form name="form" action="/dashboard/search" method="post">
-                            <div class="css-searchbar">
-                                <input class="search-bar mr-sm-2" type="text" name = "cari" placeholder="Kelas apa yang kamu ingin ikuti hari ini?" width=100>
-                                <a href="#" class="btn search-btn" name = "submit" type="submit">
-                                    <img src="img/search.png">
-                                </a>
+                        <nav class="formbar">
+                            <form name="form" action="/dashboard/search" method="post">
+                                <div class="css-searchbar">
+                                    <input class="search-bar mr-sm-2" type="text" name = "cari" placeholder="Kelas apa yang kamu ingin ikuti hari ini?" width=100>
+                                    <a href="#" class="btn search-btn" name = "submit" type="submit">
+                                        <img src="img/search.png">
+                                    </a>
+                                </div>
+                            </form>
+                        </nav>
+                        <div class="indexbtn" align="center">
+                            <div class="btnregis" align="center">
+                                <a href="/register" class="btn btn-dash-outline" type="button">DAFTAR</a>
                             </div>
-                        </form>
-                    </nav>
-                    <div class="indexbtn" align="center">
-                        <div class="btnregis" align="center">
-                            <a href="/register" class="btn btn-dash-outline" type="button">DAFTAR</a>
+                            <div class="btnmasuk" align="center">
+                                <a href="/login" class="btn btn-dash" href="/login" type="button">MASUK</a>
+                            </div>
                         </div>
-                        <div class="btnmasuk" align="center">
-                            <a href="/login" class="btn btn-dash" href="/login" type="button">MASUK</a>
-                        </div>
-                    </div>
             </div>
         </nav>
     </header>
 
-    <!-- content -->
+<!-- content -->
     <div>
         <div class="box-kelas">
             <div class="cover-mapel">
@@ -93,6 +93,45 @@
                     <div class="content-mapel" align="center">
                         <br>
                         <label for="math">Ilmu Pengetahuan Sosial</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-4" align="center">
+                    <div class="kotak-inggris">
+                        <br><br>
+                        <img src="img/inggris.png" width=60px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label>Bahasa Inggris</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-5" align="center">
+                    <div class="kotak-ipa">
+                        <br><br>
+                        <img src="img/ipa.png" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label>Ilmu Pengetahuan Alam</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-6" align="center">
+                    <div class="kotak-mat">
+                        <br><br>
+                        <img src="img/matematika.png" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="math">Matematika</label>
                         <a href="/login" class="btn btn-primary:hover btn-join">
                             Join Kelas
                         </a>
@@ -156,6 +195,45 @@
                         </a>
                     </div>
                 </div>
+                <div class="mapel-4" align="center">
+                    <div class="kotak-bi">
+                        <br><br>
+                        <img src="img/indonesia.png" width=60px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="indonesia">Bahasa Indonesia</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-5" align="center">
+                    <div class="kotak-mat">
+                        <br><br>
+                        <img src="img/matematika.png" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="indonesia">Bahasa Indonesia</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-6" align="center">
+                    <div class="kotak-inggris">
+                        <br><br>
+                        <img src="img/inggris.png" width=60px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="indonesia">Bahasa Indonesia</label>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="box-kelas box-3">
@@ -199,7 +277,7 @@
                     </div>
                 </div>
                 <div class="mapel-3">
-                <div class="kotak-inggris" align="center">
+                    <div class="kotak-inggris" align="center">
                         <br><br>
                         <img src="img/inggris.png" width=60px>
                     </div>
@@ -211,13 +289,49 @@
                         </a>
                     </div>
                 </div>
+                <div class="mapel-4">
+                    <div class="kotak-ipa" align="center">
+                        <br><br>
+                        <img src="img/ipa.png" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="kimia">Kimia</label>
+                        <br>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-5">
+                    <div class="kotak-biologi" align="center">
+                        <br><br>
+                        <img src="img/biologi.png" width=80px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label>Biologi</label>
+                        <br>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
+                <div class="mapel-6">
+                    <div class="kotak-bi" align="center">
+                        <br><br>
+                        <img src="img/indonesia.png" width=60px>
+                    </div>
+                    <div class="content-mapel" align="center">
+                        <br>
+                        <label for="english">Bahasa Indonesia</label><br>
+                        <a href="/login" class="btn btn-primary:hover btn-join">
+                            Join Kelas
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <label for="footer">&#169;2020, Lesaja Murid</label>
-    </div>
-    <script src=”https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js”></script>
-    <script src=”js/bootstrap.min.js”></script>
 </body>
 </html>
