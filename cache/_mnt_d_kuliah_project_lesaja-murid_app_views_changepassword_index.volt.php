@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Change Password</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
 <?= $this->flashSession->output() ?>
 <?= $this->tag->form(['changepassword/changeSubmit', 'method' => 'post']) ?>
     <div class="box" align = "center"> 
@@ -23,11 +24,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="css-boxpassword1">
-                    <div class="css-lapisankeduaa1">
-                        <div class="css-changeborder">
-                            <p class="css-title-active1">Password</p>
+                    <div class="css-boxpassword1">
+                        <div class="css-lapisankeduaa1">
+                            <div class="css-changeborder">
+                                <p class="css-title-active1">Password</p>
+                            </div>
                         </div>
                     </div>
                 </div>

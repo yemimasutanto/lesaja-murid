@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Edit Profil</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
 <?= $this->flashSession->output() ?>
 <?= $this->tag->form(['editprofil/editSubmit', 'method' => 'post']) ?>
     <div class="box" align = "center"> 

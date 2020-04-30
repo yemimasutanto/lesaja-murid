@@ -8,8 +8,9 @@
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
 <body class="full">
+    {{ flashSession.output() }}
+    
     <header class="headerapi" align="center">
-        <form action="edit/editSubmit" method="POST">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
             <div class="collapse navbar-collapse">
@@ -51,119 +52,120 @@
     </header>
         
         <!-- content -->
-    <div class="contentclass" align="center">
-        {{ flashSession.output() }}
-        <div class="box-kelas">
-            <div class="cover-mapel">
-                <div class="mapel-judul" align="left">
-                    <br><br><br>
-                    <img src="img/course.png" width=60px>
-                    <br><br>
-                    <label class="judul" for="judul">Jenjang</label><br>
-                    <label class="judul" for="judul">SD</label><br>
-                    <br>
-                    <label for="other">Lihat Info</label>
-                    <a href='/kelas_sd' class="btn btn-link-other">
-                        <img src="img/arrow.png" width=12px>
-                    </a>
-                </div>
-                {% set i = 1 %}
-                {% for mapel in mapels%}
-                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SD' %}
-
-                <div class="mapel-{{ i }}" align="center">
-                    <div class="{{ mapel.class }}">
+    <main>
+        <div class="headerapi" align="center">
+            <div class="box-kelas">
+                <div class="cover-mapel1">
+                    <div class="mapel-judul" align="left">
+                        <br><br><br>
+                        <img src="img/course.png" width=60px>
                         <br><br>
-                        <img src="img/{{ mapel.img_src}}" width=60px>
-                    </div>
-                    <div class="content-mapel" align="center">
+                        <label class="judul" for="judul">Jenjang</label><br>
+                        <label class="judul" for="judul">SD</label><br>
                         <br>
-                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                        <br>
-                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                            Join Kelas
+                        <label for="other">Lihat Info</label>
+                        <a href='/kelas_sd' class="btn btn-link-other">
+                            <img src="img/arrow.png" width=12px>
                         </a>
                     </div>
-                </div>
-                {% set i=i+1 %}
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="box-kelas box-2">
-            <div class="cover-mapel">
-                <div class="mapel-judul" align="left">
-                    <br><br><br>
-                    <img src="img/course.png" width=60px>
-                    <br><br>
-                    <label class="judul" for="judul">Jenjang</label><br>
-                    <label class="judul" for="judul">SMP</label><br>
-                    <br>
-                    <label for="other">Lihat Info</label>
-                    <a href='/kelas_smp' class="btn btn-link-other">
-                        <img src="img/arrow.png" width=12px>
-                    </a>
-                </div>
-                {% set i = 1 %}
-                {% for mapel in mapels%}
-                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMP' %}
-                <div class="mapel-{{ i }}">
-                    <div class="{{ mapel.class }}" align="center">
-                        <br><br>
-                        <img src="img/{{ mapel.img_src}}" width=80px>
+                    {% set i = 1 %}
+                    {% for mapel in mapels%}
+                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SD' %}
+    
+                    <div class="mapel-{{ i }}" align="center">
+                        <div class="{{ mapel.class }}">
+                            <br><br>
+                            <img src="img/{{ mapel.img_src}}" width=60px>
+                        </div>
+                        <div class="content-mapel" align="center">
+                            <br>
+                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                            <br>
+                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                                Join Kelas
+                            </a>
+                        </div>
                     </div>
-                    <div class="content-mapel" align="center">
+                    {% set i=i+1 %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <div class="box-kelas box-2">
+                <div class="cover-mapel">
+                    <div class="mapel-judul" align="left">
+                        <br><br><br>
+                        <img src="img/course.png" width=60px>
+                        <br><br>
+                        <label class="judul" for="judul">Jenjang</label><br>
+                        <label class="judul" for="judul">SMP</label><br>
                         <br>
-                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                        <br>
-                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                            Join Kelas
+                        <label for="other">Lihat Info</label>
+                        <a href='/kelas_smp' class="btn btn-link-other">
+                            <img src="img/arrow.png" width=12px>
                         </a>
                     </div>
-                </div>
-                {% set i=i+1 %}
-                {% endif %}
-                {% endfor %}
-            </div>
-        </div>
-
-        <div class="box-kelas box-3">
-            <div class="cover-mapel">
-                <div class="mapel-judul" align="left">
-                    <br><br><br>
-                    <img src="img/course.png" width=60px>
-                    <br><br>
-                    <label class="judul" for="judul">Jenjang</label><br>
-                    <label class="judul" for="judul">SMA</label><br>
-                    <br>
-                    <label for="other">Lihat Info</label>
-                    <a href='/kelas_sma' class="btn btn-link-other">
-                        <img src="img/arrow.png" width=12px>
-                    </a>
-                </div>
-                {% set i = 1 %}
-                {% for mapel in mapels%}
-                {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMA' %}
-                <div class="mapel-{{ i }}">
-                    <div class="{{ mapel.class }}" align="center">
-                        <br><br>
-                        <img src="img/{{ mapel.img_src}}" width=80px>
+                    {% set i = 1 %}
+                    {% for mapel in mapels%}
+                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMP' %}
+                    <div class="mapel-{{ i }}">
+                        <div class="{{ mapel.class }}" align="center">
+                            <br><br>
+                            <img src="img/{{ mapel.img_src}}" width=80px>
+                        </div>
+                        <div class="content-mapel" align="center">
+                            <br>
+                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                            <br>
+                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                                Join Kelas
+                            </a>
+                        </div>
                     </div>
-                    <div class="content-mapel" align="center">
+                    {% set i=i+1 %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+    
+            <div class="box-kelas box-3">
+                <div class="cover-mapel">
+                    <div class="mapel-judul" align="left">
+                        <br><br><br>
+                        <img src="img/course.png" width=60px>
+                        <br><br>
+                        <label class="judul" for="judul">Jenjang</label><br>
+                        <label class="judul" for="judul">SMA</label><br>
                         <br>
-                        <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
-                        <br>
-                        <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
-                            Join Kelas
+                        <label for="other">Lihat Info</label>
+                        <a href='/kelas_sma' class="btn btn-link-other">
+                            <img src="img/arrow.png" width=12px>
                         </a>
                     </div>
+                    {% set i = 1 %}
+                    {% for mapel in mapels%}
+                    {% if mapel.img_src !== null and mapel.jenjang_mapel === 'SMA' %}
+                    <div class="mapel-{{ i }}">
+                        <div class="{{ mapel.class }}" align="center">
+                            <br><br>
+                            <img src="img/{{ mapel.img_src}}" width=80px>
+                        </div>
+                        <div class="content-mapel" align="center">
+                            <br>
+                            <label for="{{ mapel.nama_mapel }}">{{ mapel.nama_mapel }}</label>
+                            <br>
+                            <a class="btn btn-primary:hover btn-join" href="dashboard/join/{{ mapel.id_mapel}}">
+                                Join Kelas
+                            </a>
+                        </div>
+                    </div>
+                    {% set i=i+1 %}
+                    {% endif %}
+                    {% endfor %}
                 </div>
-                {% set i=i+1 %}
-                {% endif %}
-                {% endfor %}
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>

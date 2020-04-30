@@ -14,8 +14,6 @@ class ChangePasswordController extends ControllerBase
     public function changeSubmitAction(){
         if ($this->request->isPost()) 
         {
-            // echo "test";
-            // $this->view->disable();
             $password_murid = $this->request->getPost("old_pwd");
             $confirm = $this->request->getPost("new_pwd");
 
@@ -49,8 +47,6 @@ class ChangePasswordController extends ControllerBase
             {
                 if($password_murid !== $exist->password_murid)
                 {
-                    // $this->flashSession->error("Password anda salah");
-                    // $this->flashSession->error("Passmu '$password_murid', tp d database passmu '$exist->password_murid'");
                     return $this->response->redirect('changepassword');
                 }
                 else
@@ -59,7 +55,7 @@ class ChangePasswordController extends ControllerBase
                     $exist->password_murid = $confirm;
                     
                     // Store and check for errors
-                    $success = $user->update();
+                    $success = $exist->update();
                     $this->flashSession->success("Password berhasil diubah!");
                     return $this->response->redirect('dashboard');
                 }

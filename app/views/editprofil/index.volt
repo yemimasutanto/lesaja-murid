@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
 {{ flashSession.output() }}
 {{ form('editprofil/editSubmit', 'method': 'post') }}
     <div class="box" align = "center"> 

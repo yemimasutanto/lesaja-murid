@@ -49,8 +49,6 @@ class ResetController extends ControllerBase
             {
                 if($password_murid !== $exist->password_murid)
                 {
-                    // $this->flashSession->error("Password anda salah");
-                    // $this->flashSession->error("Passmu '$password_murid', tp d database passmu '$exist->password_murid'");
                     return $this->response->redirect('reset');
                 }
                 else

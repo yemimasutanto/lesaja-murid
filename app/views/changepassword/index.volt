@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
 {{ flashSession.output() }}
 {{ form('changepassword/changeSubmit', 'method': 'post') }}
     <div class="box" align = "center"> 
@@ -24,11 +24,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="css-boxpassword1">
-                    <div class="css-lapisankeduaa1">
-                        <div class="css-changeborder">
-                            <p class="css-title-active1">Password</p>
+                    <div class="css-boxpassword1">
+                        <div class="css-lapisankeduaa1">
+                            <div class="css-changeborder">
+                                <p class="css-title-active1">Password</p>
+                            </div>
                         </div>
                     </div>
                 </div>
