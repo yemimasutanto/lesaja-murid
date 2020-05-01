@@ -8,20 +8,9 @@ class EditProfilController extends ControllerBase
     public function indexAction()
     {
        
-            // echo "Hello World";
-            // $this->view->disable();
-
-        // $db = $this->getDI()->get('db');
-
-        // $sql = "SELECT * from murid";
-
-        // $result = $db->fetchOne($sql, \Phalcon\Db\Enum::FETCH_ASSOC);
-
-        // echo var_dump($result);
     }
 
     public function editSubmitAction(){
-
         if ($this->request->isPost()) 
         {
             $nama_murid = $this->request->getPost("nama");
@@ -31,7 +20,7 @@ class EditProfilController extends ControllerBase
             {
                 $this->flashSession->error("Data tidak boleh kosong");
                 //pick up the same view to display the flash session errors
-                return $this->response->redirect('edit');
+                return $this->response->redirect('editprofil');
             }
             $exist = Murid::findFirst(
                 [
@@ -45,14 +34,14 @@ class EditProfilController extends ControllerBase
             if (!$exist)
             {
                 $this->flashSession->error("Email anda belum diubah");
-                return $this->response->redirect('edit');
+                return $this->response->redirect('editprofil');
             }
 
             else
             {
                 if($nama_murid === $exist->nama_murid)
                 {
-                    $this->flashSession->error("Email anda belum diubahjjjjjjj");
+                    $this->flashSession->error("Nama anda belum diubah");
                     return $this->response->redirect('editprofil');
                 }
                 else
@@ -65,6 +54,7 @@ class EditProfilController extends ControllerBase
                     $success = $exist->update();
                     $this->flashSession->success("Data diri berhasil diubah!");
                     return $this->response->redirect('dashboard');
+
                 }
             }
         }

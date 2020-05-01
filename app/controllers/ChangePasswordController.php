@@ -25,13 +25,11 @@ class ChangePasswordController extends ControllerBase
                 return $this->view->pick("changepassword/index");
             }            
 
-            
-
             $exist = Murid::findFirst(
                 [
                     'conditions' => 'password_murid = :pwd:',
                     'bind'       => [
-                        'pwd' => $password_murid, //eh
+                        'pwd' => $password_murid,
                     ],
                 ]
             );
@@ -61,7 +59,7 @@ class ChangePasswordController extends ControllerBase
                     // Store and check for errors
                     $success = $exist->update();
                     $this->flashSession->success("Password berhasil diubah!");
-                    return $this->response->redirect('dashboard');
+                    return $this->response->redirect('editprofil');
                 }
             }
         }

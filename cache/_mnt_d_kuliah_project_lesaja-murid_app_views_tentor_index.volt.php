@@ -68,10 +68,10 @@
                     <?php $v120658372939717899601iterator = $tentor; $v120658372939717899601incr = 0; $v120658372939717899601loop = new stdClass(); $v120658372939717899601loop->self = &$v120658372939717899601loop; $v120658372939717899601loop->length = count($v120658372939717899601iterator); $v120658372939717899601loop->index = 1; $v120658372939717899601loop->index0 = 1; $v120658372939717899601loop->revindex = $v120658372939717899601loop->length; $v120658372939717899601loop->revindex0 = $v120658372939717899601loop->length - 1; ?><?php foreach ($v120658372939717899601iterator as $item) { ?><?php $v120658372939717899601loop->first = ($v120658372939717899601incr == 0); $v120658372939717899601loop->index = $v120658372939717899601incr + 1; $v120658372939717899601loop->index0 = $v120658372939717899601incr; $v120658372939717899601loop->revindex = $v120658372939717899601loop->length - $v120658372939717899601incr; $v120658372939717899601loop->revindex0 = $v120658372939717899601loop->length - ($v120658372939717899601incr + 1); $v120658372939717899601loop->last = ($v120658372939717899601incr == ($v120658372939717899601loop->length - 1)); ?>
                     <tr>
                         <th scope="row"><?= $v120658372939717899601loop->index ?></th>
-                        <td><?= $item['nama_tentor'] ?></td>
-                        <td><?= $item['email_tentor'] ?></td>
-                        <td><?= $item['jkel'] ?></td>
-                        <td><?= $item['tgl_lahir'] ?></td>
+                        <td><?= $item->nama_tentor ?></td>
+                        <td><?= $item->email_tentor ?></td>
+                        <td><?= $item->jkel ?></td>
+                        <td><?= $item->tgl_lahir ?></td>
                     </tr>
                     <?php $v120658372939717899601incr++; } ?>
                 </tbody>

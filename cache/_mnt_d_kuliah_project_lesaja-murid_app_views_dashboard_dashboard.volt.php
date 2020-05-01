@@ -42,7 +42,7 @@
                             <img src="img/user.png">
                         </button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="/editprofil">Edit Profile</a>
+                            <a class="dropdown-item" href="/changepassword">Edit Profile</a>
                             <a class="dropdown-item" href="/logout">Keluar</a>
                         </div>
                     </li>

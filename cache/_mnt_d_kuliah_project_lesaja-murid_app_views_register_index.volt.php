@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
     <?= $this->flashSession->output() ?>
     <?= $this->tag->form(['register/registerSubmit', 'method' => 'post']) ?>
     <div class="box-register" align = "center"> 
@@ -38,4 +38,4 @@
     </div> 
     <?= $this->tag->endform() ?>
 </body>
-</html>
+</html> 

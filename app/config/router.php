@@ -6,9 +6,6 @@ $config = $di->getConfig();
 
 $router->removeExtraSlashes(true);
 
-//setting manual routes
-
-//setting automatic routes
 $router->add('/', [
     'namespace' => 'App\Controllers',
     'controller' =>  'index',

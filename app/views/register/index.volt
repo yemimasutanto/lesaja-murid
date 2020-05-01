@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
 </head>
-<body>
+<body class="bg-guest">
     {{ flashSession.output() }}
     {{ form('register/registerSubmit', 'method': 'post') }}
     <div class="box-register" align = "center"> 
@@ -38,4 +38,4 @@
     </div> 
     {{ endform()}}
 </body>
-</html>
+</html> 

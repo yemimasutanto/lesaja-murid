@@ -9,7 +9,6 @@
 </head>
 <body class="full">
     {{ flashSession.output() }}
-
     <header class="headerapi" align="center">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
@@ -52,29 +51,25 @@
     </header>
         
         <!-- content -->
-    <main>
-        <div style="overflow-x:auto">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th scope="col">No</th>
-                        <th scope="col">Nama Mata Pelajaran</th>
-                        <th scope="col">jenjang</th> 
-                        <th scope="col">Nama Tentor</th> 
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for item1 in kelas %}
-                    <tr>
-                        <th scope="row">{{ loop.index }}</th>
-                        <td>{{ item1['nama_mapel']}}</td>
-                        <td>{{ item1['jenjang'] }}</td>
-                        <td>{{ item1['nama_tentor']}}</td>
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
-    </main>
+    <div style="overflow-x:auto">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Nama Mata Pelajaran</th>
+                    <th scope="col">Nama Tentor</th> 
+                </tr>
+            </thead>
+            <tbody>
+                {% for itemkls in kelas %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ itemkls.nama_mapel }}</td>
+                    <td>{{ itemkls.nama_tentor }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
