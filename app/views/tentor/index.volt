@@ -12,7 +12,7 @@
 
     <header class="headerapi" align="center">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand"><img src="img/lesaja.png" width=120></a>
+            <a href = /dashboard class="navbar-brand"><img src="img/lesaja.png" width=120></a>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto align-middle">
                     <li class="nav-item align-middle" align="center">
@@ -58,18 +58,20 @@
                 <thead>
                     <tr>
                         <th scope="col">No</th>
-                        <th scope="col">Nama Mata Pelajaran</th>
-                        <th scope="col">jenjang</th> 
-                        <th scope="col">Nama Tentor</th> 
+                        <th scope="col">Nama Tentor</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Jenis Kelamin</th>
+                        <th scope="col">Tanggal Lahir</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {% for item1 in kelas %}
+                    {% for item in tentor %}
                     <tr>
                         <th scope="row">{{ loop.index }}</th>
-                        <td>{{ item1['nama_mapel']}}</td>
-                        <td>{{ item1['jenjang'] }}</td>
-                        <td>{{ item1['nama_tentor']}}</td>
+                        <td>{{ item['nama_tentor']}}</td>
+                        <td>{{ item['email_tentor'] }}</td>
+                        <td>{{ item['jkel']}}</td>
+                        <td>{{ item['tgl_lahir'] }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

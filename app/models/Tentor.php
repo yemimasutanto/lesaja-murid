@@ -4,7 +4,7 @@ Namespace App\Models;
 
 use Phalcon\Mvc\Model;
 
-class Murid extends Model
+class Tentor extends Model
 {
     // variables
     public $id_tentor;

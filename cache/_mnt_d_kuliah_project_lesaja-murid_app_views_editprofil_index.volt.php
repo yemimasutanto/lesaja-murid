@@ -35,15 +35,15 @@
                 </div>
             </div>
             <p><br><br>
-            <input class="form-control mr-sm-2" name="nama" type="text" placeholder="<?php echo $this->session->get('AUTH_NAME'); ?>">
+            <input class="form-control mr-sm-2" name="nama" type="text" value="<?php echo $this->session->get('AUTH_NAME'); ?>">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name="email" type="email" placeholder="<?php echo $this->session->get('AUTH_EMAIL'); ?>">
+            <input class="form-control mr-sm-2" name="email" type="email" value="<?php echo $this->session->get('AUTH_EMAIL'); ?>">
             </p><br><br>
             <div class="btnbawah" align="center">
                 <div align="center">
-                    <a href='/' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
-                    <a href='/dashboard' class="btn btn-submit btnyesbtn-css-1 btn-primary:hover" type="button">SUBMIT</a>
+                    <a href='/dashboard' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
+                    <?= $this->tag->submitButton(['SUBMIT', 'class' => 'btn btn-submit btnyesbtn-css-1 btn-primary:hover']) ?>
                 </div>
             </div>
        </div>   

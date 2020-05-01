@@ -14,37 +14,41 @@ class ChangePasswordController extends ControllerBase
     public function changeSubmitAction(){
         if ($this->request->isPost()) 
         {
-            $password_murid = $this->request->getPost("old_pwd");
-            $confirm = $this->request->getPost("new_pwd");
+            $password_murid = $this->request->getPost("old-pwd");
+            $confirm = $this->request->getPost("new-pwd");
+            $confirm1 = $this->request->getPost('new-pwd1');
 
-            if ($password_murid === "" && $confirm === "")
+            if ($password_murid === null)
             {
                 $this->flashSession->error("Password anda kosong");
                 //pick up the same view to display the flash session errors
                 return $this->view->pick("changepassword/index");
-            }
+            }            
 
-            // get value
-            $password_murid = $this->request->getPost('old_pwd', 'string');
-            $confirm = $this->request->getPost('new_pwd', 'string');
+            
 
             $exist = Murid::findFirst(
                 [
                     'conditions' => 'password_murid = :pwd:',
                     'bind'       => [
-                        'pwd' => $password_murid,
+                        'pwd' => $password_murid, //eh
                     ],
                 ]
             );
 
             if (!$exist)
             {
-                $this->flashSession->error("Password anda salah");
+                $this->flashSession->error("Password anda salah ".$password_murid);
                 return $this->response->redirect('changepassword');
             }
 
             else
             {
+                if($confirm !== $confirm1){
+                    $this->flashSession->error("Password tidak cocok");
+                    return $this->response->redirect('changepassword');
+                }
+
                 if($password_murid !== $exist->password_murid)
                 {
                     return $this->response->redirect('changepassword');

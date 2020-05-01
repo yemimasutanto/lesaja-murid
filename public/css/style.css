@@ -245,6 +245,13 @@
     margin-left: 25px;
   }
 
+  .mainn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;
+  }
+
   .infotentor{
     margin-left: 125px;
     margin-top: 20px;
@@ -345,16 +352,6 @@
 
   .navbar-expand-md .navbar-nav .dropdown-menu {
     position: absolute;
-  }
-
-  .main-rapi{
-    justify-content: center;
-    display: contents;
-    align-content: center;
-    font-weight: 400;
-    padding-left: 100px;
-    height: 100%;
-    font-family: 'Google Sans', Arial, sans-serif;
   }
 
   .box-kelas{

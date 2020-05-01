@@ -34,18 +34,18 @@
                 </div>
             </div>
             <p><br>
-            <input class="form-control mr-sm-2" name="old-pwd" type="password" placeholder="Masukkan Password Lama">
+            <input class="form-control mr-sm-2" name=old-pwd type="password" placeholder="Masukkan Password Lama">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name="new-pwd" type="password" placeholder="Masukkan Password Baru">
+            <input class="form-control mr-sm-2" name=new-pwd type="password" placeholder="Masukkan Password Baru">
             </p>
             <p><br>
-            <input class="form-control mr-sm-2" name="new-pwd" type="password" placeholder="Konfirmasi Password Baru">
+            <input class="form-control mr-sm-2" name=new-pwd1 type="password" placeholder="Konfirmasi Password Baru">
             </p><br>
             <div class="btnbawah" align="center">
                 <div align="center">
-                    <a href='/' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
-                    <a href='/dashboard' class="btn btn-submit btnyesbtn-css-1 btn-primary:hover" type="button">SUBMIT</a>
+                    <a href='/dashboard' class="btn btn-outline-small btncancel btn-css btn-primary:hover" type="button">CANCEL</a>
+                    <?= $this->tag->submitButton(['SUBMIT', 'class' => 'btn btn-submit btnyesbtn-css-1 btn-primary:hover']) ?>
                 </div>
             </div>
        </div>   

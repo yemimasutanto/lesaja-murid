@@ -9,6 +9,12 @@ class LoginController extends ControllerBase{
     }
 
     public function loginSubmitAction(){
+
+        if($this->session->has('AUTH_ID')){
+            $this->flashSession->error("Already Login");
+            return $this->response->redirect('dashboard');
+        }
+
         if ($this->request->isPost()) {
             $email_murid = $this->request->getPost("email");
             $password_murid = $this->request->getPost("password");
@@ -39,9 +45,6 @@ class LoginController extends ControllerBase{
 
             if ($user) {
                 if ($password_murid === $user->password_murid){
-                    # https://docs.phalconphp.com/en/3.3/session#start
-    
-                    // Set a session
                     $this->session->set('AUTH_ID', $user->id_murid);
                     $this->session->set('AUTH_NAME', $user->nama_murid);
                     $this->session->set('AUTH_EMAIL', $user->email_murid);
